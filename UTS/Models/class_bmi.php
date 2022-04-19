@@ -4,29 +4,18 @@ class Bmi{
     private $berat;
     private $tinggi;
 
-    public function setBerat($berat){
+    function _construct($berat, $tinggi){
         $this->berat = $berat;
-    }
-
-    public function getBerat(){
-        return $this->berat;
-    }
-
-    public function setTinggi($tinggi){
         $this->tinggi = $tinggi;
-    }
-
-    public function getTinggi(){
-        return $this->tinggi;
     }
 
     public function nilaiBmi(){
         $nilaiBmi = $this->berat / pow($this->tinggi, 2);
-        $hasil = printf("%.1f", $nilaiBmi);
+        $hasil = printf("%.1f ", $nilaiBmi);
         return $hasil;
     }
 
-    public function StatusBmi(){
+    public function statusBmi(){
         if(self::nilaiBmi() < 18.5){
             $status = 'Kekurangan Berat Badan';
         } else if(self::nilaiBmi() >= 18.5 && self::nilaiBmi() <= 24.9){

@@ -1,0 +1,13 @@
+#homepage {
+  padding-bottom: 5%;
+}
+
+#homepage h1 {
+  padding: 2% 0 2% 0;
+}
+
+.container .card .card-body .row .image img {
+  width: 100%;
+  height: 100%;
+}
+/*# sourceMappingURL=style.css.map */

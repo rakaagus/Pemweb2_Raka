@@ -1,9 +1,9 @@
 <?php
 
-require_once './class_bmi.php';
-require_once './class_passien.php';
+require_once 'class_bmi.php';
+require_once 'class_pasien.php';
 
-class BmiPassien{
+class BmiPasien{
     public $id;
     public $bmi;
     public $tanggal;
