@@ -9,7 +9,7 @@ class Pasien{
     public $email;
     public $gender;
     
-    function _construct($nama, $gender, $tgl_lahir, $kode){
+    function __construct($nama, $gender, $tgl_lahir, $kode){
         $this->nama = $nama;
         $this->gender = $gender;
         $this->tgl_lahir = $tgl_lahir;

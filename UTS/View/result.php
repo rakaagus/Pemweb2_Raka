@@ -37,8 +37,8 @@
       <div class="container text-light">
         <h1 class="text-capitalize">berhasil</h1>
         <p class="text-capitalize">data yang berhasil kami dapat ialah</p>
-        <p class="text-capitalize">nama kamu adalah... <?php echo $nama; ?></p>
-        <p class="text-capitalize">gender... <?php $gender; ?></p>
+        <p class="text-capitalize">nama kamu adalah... <?= $nama; ?></p>
+        <p class="text-capitalize">gender... <?= $gender; ?></p>
         <p class="text-capitalize">Tanggal lahir Kamu <?= $tgl_lahir; ?></p>
         <p class="text-capitalize">Hasil Bmi Kamu adalah <?= $bmi->nilaiBmi(); ?></p>
         <p class="text-capitalize">Status Bmi Kamu Adalah <?= $bmi->statusBmi(); ?></p>
@@ -53,11 +53,19 @@
 
     <script>
         <?php
-            if(!empty($proses)){
-                echo "popUp(1)";
-            } else{
-               echo "popUp(2)";
-            }
+            if(empty($proses)){
+              echo 'Swal.fire({';
+                  echo 'icon: "success",';
+                  echo 'title: "Success",';
+                  echo 'text: "Data Berhasil Disimpan"';
+              echo '})';
+          } else{
+              echo 'Swal.fire({';
+                  echo 'icon: "error",';
+                  echo 'title: "error",';
+                  echo 'text: "Data Tidak Berhasil Didapatkan"';
+              echo '})';
+          }
         ?>
     </script>
 

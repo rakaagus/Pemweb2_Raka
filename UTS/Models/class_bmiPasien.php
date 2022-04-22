@@ -9,7 +9,7 @@ class BmiPasien{
     public $tanggal;
     public $passien;
 
-    function _construct($bmi, $tanggal, $passien){
+    function __construct($bmi, $tanggal, $passien){
         $this->bmi = $bmi;
         $this->tanggal = $tanggal;
         $this->passien = $passien;

@@ -4,14 +4,14 @@ class Bmi{
     private $berat;
     private $tinggi;
 
-    function _construct($berat, $tinggi){
-        $this->berat = $berat;
-        $this->tinggi = $tinggi;
+    function __construct($berat, $tinggi){
+        $this->berat = (int)$berat;
+        $this->tinggi = (int)$tinggi;
     }
 
     public function nilaiBmi(){
-        $nilaiBmi = $this->berat / pow($this->tinggi, 2);
-        $hasil = printf("%.1f ", $nilaiBmi);
+        $nilaiBmi = $this->berat / pow(($this->tinggi / 100), 2);
+        $hasil = sprintf("%.1f", $nilaiBmi);
         return $hasil;
     }
 
