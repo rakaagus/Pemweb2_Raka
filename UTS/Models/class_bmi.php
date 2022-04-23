@@ -1,8 +1,8 @@
 <?php 
 
 class Bmi{
-    private $berat;
-    private $tinggi;
+    public $berat;
+    public $tinggi;
 
     function __construct($berat, $tinggi){
         $this->berat = (int)$berat;

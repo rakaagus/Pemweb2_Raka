@@ -7,12 +7,12 @@ class BmiPasien{
     public $id;
     public $bmi;
     public $tanggal;
-    public $passien;
+    public $pasien;
 
-    function __construct($bmi, $tanggal, $passien){
+    function __construct($bmi, $tanggal, $pasien){
         $this->bmi = $bmi;
         $this->tanggal = $tanggal;
-        $this->passien = $passien;
+        $this->pasien = $pasien;
     }
 }
 
