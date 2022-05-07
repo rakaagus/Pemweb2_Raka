@@ -13,3 +13,5 @@ $ab5 = new AccountBank($norek, $saldo, $nama);
 $ab1->transfer($ab2, 200000);
 
 $ar_ab = [$ab1, $ab2, $ab3, $ab4, $ab5];
+
+?>

@@ -74,48 +74,7 @@ switch($predikat){
         <div class="card-body">
           <h5 class="card-title">Form Nilai Siswa</h5>
             <hr>
-            <form class="col-6 mx-auto my-auto" action="form_nilai_get.php" method="GET" id="formNilai">
-              <div class="row mb-3">
-                <label for="inputNama" class="col-sm-3 col-form-label">Nama Lengkap</label>
-                <div class="col-sm-9">
-                  <input type="text" class="form-control" id="inputNama" name="nama">
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="inputMatkul" class="col-sm-3 col-form-label">Mata Kuliah</label>
-                <div class="col-sm-9">
-                  <select class="form-select" aria-label="Default select example" name="matkul">
-                    <option selected>--->Select<---</option>
-                    <option value="DDP">DDP</option>
-                    <option value="Basis Data">Basis Data 1</option>
-                    <option value="Pw2">Pemogramaan Web 2</option>
-                  </select>
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="inputNilaiUts" class="col-sm-3 col-form-label">Nilai Uts</label>
-                <div class="col-sm-6">
-                  <input type="text" class="form-control" id="inputNilaiUts" name="nilai_uts" placeholder="Nilai Uts">
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="inputNilaiUas" class="col-sm-3 col-form-label">Nilai Uas</label>
-                <div class="col-sm-6">
-                  <input type="text" class="form-control" id="inputNilaiUas" name="nilai_uas" placeholder="Nilai Uas">
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="inputNilaiTugas" class="col-sm-3 col-form-label">Nilai Tugas</label>
-                <div class="col-sm-6">
-                  <input type="text" class="form-control" id="inputNilaiTugas" name="nilai_tugas" placeholder="Nilai Tugas/Praktikum">
-                </div>
-              </div>
-              <div class="row mb-3">
-                <div class="col-sm-8">
-                  <input type="submit" value="Simpan" class="btn btn-primary" name="proses">
-                </div>
-              </div>
-            </form>
+            
         </div>
       </div>
     </div>
