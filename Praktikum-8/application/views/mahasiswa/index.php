@@ -23,7 +23,7 @@
 		<!-- Default box -->
 		<div class="card">
 			<div class="card-header">
-				<h3 class="card-title">Data Mahasiswa <a class="btn btn-primary" href="<?= base_url() ?>index.php/mahasiswa/create" role="button">Tambah Data</a></h3>
+				<h3 class="card-title">Data Mahasiswa</h3>
 
 				<div class="card-tools">
 					<button
@@ -45,6 +45,7 @@
 				</div>
 			</div>
 			<div class="card-body">
+			<a class="btn btn-primary" href="<?= base_url() ?>index.php/mahasiswa/create" role="button">Tambah Data</a>
 			<table class="table table-striped">
 				<thead>
 					<tr>
@@ -74,9 +75,9 @@
 						<td><?= $mhs->ipk?></td>
 						<td><?= $mhs->prodi_kode?></td>
 						<td>
-							<a class="btn btn-info" href="mahasiswa/detail?id=<?= $mhs->nim?>" role="button">Detail</a>
-							<a class="btn btn-warning" href="#" role="button">Update</a>
-							<a class="btn btn-danger" href="#" role="button">Delete</a>
+							<a class="btn btn-info" href="<?= base_url() ?>index.php/mahasiswa/detail?id=<?= $mhs->nim?>" role="button">Detail</a>
+							<a class="btn btn-warning" href="<?= base_url() ?>index.php/mahasiswa/edit?id=<?= $mhs->nim?>" role="button">Update</a>
+							<a class="btn btn-danger" href="<?= base_url() ?>index.php/mahasiswa/delete?id=<?= $mhs->nim?>" role="button" onclick="if(!confirm('Yakin Hapus Data Mahasiswa Berikut | <?=$mhs->nama?>?')) {return false}">Delete</a>
 						</td>
 					</tr>
 					<?php

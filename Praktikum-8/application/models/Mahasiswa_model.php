@@ -15,15 +15,19 @@ class Mahasiswa_model extends CI_Model{
     }
 
     public function save($data){
-        
+        $sql = "INSERT INTO mahasiswa (nim, nama, gender, tmp_lahir, tgl_lahir, ipk, prodi_kode)
+        VALUES (?,?,?,?,?,?,?)";
+        $this->db->query($sql, $data);
     }
 
     public function update($data){
-        
+        $sql = "UPDATE mahasiswa SET nim=?, nama=?, gender=?, tmp_lahir=?, tgl_lahir=?, ipk=?, prodi_kode=? WHERE nim=?";
+        $this->db->query($sql, $data);
     }
 
-    public function delete($data){
-        
+    public function delete($id){
+        $sql = "DELETE FROM mahasiswa WHERE nim=?";
+        $this->db->query($sql, array($id));
     }
 }
 ?>

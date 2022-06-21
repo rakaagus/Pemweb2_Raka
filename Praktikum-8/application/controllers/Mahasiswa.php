@@ -31,27 +31,36 @@ class Mahasiswa extends CI_Controller{
     }
 
     public function save(){
-        $this->load->model('Mahasiswa_model', 'mhs1');
-        $this->mhs1->nim = $this->input->post('nim');
-        $this->mhs1->nama = $this->input->post('nama');
-        $this->mhs1->gender = $this->input->post('jk');
-        $this->mhs1->tmp_lahir = $this->input->post('tmp_lahir');
-        $this->mhs1->tgl_lahir = $this->input->post('tgl_lahir');
-        $this->mhs1->prodi = $this->input->post('prodi');
-        $this->mhs1->ipk = $this->input->post('ipk');
+        $this->load->model('Mahasiswa_model', 'mahasiswa');
 
-        // die(print_r($this->mhs1));
+        $_nim = $this->input->post('nim');
+        $_nama = $this->input->post('nama');
+        $_gender = $this->input->post('jk');
+        $_tmp_lahir = $this->input->post('tmp_lahir');
+        $_tgl_lahir = $this->input->post('tgl_lahir');
+        $_prodi = $this->input->post('prodi');
+        $_ipk = $this->input->post('ipk');
+        $_idedit = $this->input->post('id_edit');
 
-        $data = array(
-            'title' => "View Mahasiswa",
-            'mhs1' => $this->mhs1
-        );
+        $data_mhs[] = $_nim;
+        $data_mhs[] = $_nama;
+        $data_mhs[] = $_gender;
+        $data_mhs[] = $_tmp_lahir;
+        $data_mhs[] = $_tgl_lahir;
+        $data_mhs[] = $_ipk;
+        $data_mhs[] = $_prodi;
+        
 
-        // $this->load->view('layout/header', $data);
-		// $this->load->view('layout/navbar');
-		// $this->load->view('layout/sidebar');
-		// $this->load->view('mahasiswa/view');
-		// $this->load->view('layout/footer');
+        if(isset($_idedit)){
+            //update
+            $data_mhs[] = $_idedit;
+            $this->mahasiswa->update($data_mhs);
+        } else {
+            // add data
+            $this->mahasiswa->save($data_mhs);
+        }
+
+        redirect(base_url().'index.php/mahasiswa/','refresh');
     }
 
     public function detail(){
@@ -68,6 +77,32 @@ class Mahasiswa extends CI_Controller{
 		$this->load->view('layout/sidebar');
 		$this->load->view('mahasiswa/detail');
 		$this->load->view('layout/footer');
+    }
+
+    public function edit(){
+        $_id = $this->input->get('id');
+        $this->load->model("Mahasiswa_model", 'mahasiswa');
+        $mhs_edit = $this->mahasiswa->findById($_id);
+
+        $data = array(
+            'title' => "Edit Mahasiswa",
+            'mhs_edit' => $mhs_edit
+        );
+
+        $this->load->view('layout/header', $data);
+		$this->load->view('layout/navbar');
+		$this->load->view('layout/sidebar');
+		$this->load->view('mahasiswa/edit');
+		$this->load->view('layout/footer');
+    }
+
+    public function delete(){
+        $_id = $this->input->get('id');
+        $this->load->model("Mahasiswa_model", 'mahasiswa');
+
+        $this->mahasiswa->delete($_id);
+
+        redirect(base_url().'index.php/mahasiswa/', 'refresh');
     }
 }
 
