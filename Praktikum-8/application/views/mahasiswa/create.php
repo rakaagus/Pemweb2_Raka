@@ -109,9 +109,11 @@
                     <label for="prodi" class="col-4 col-form-label">Program Studi</label> 
                     <div class="col-8">
                     <select id="prodi" name="prodi" class="custom-select">
-                        <option value="SI">Sistem Informasi</option>
-                        <option value="TI">Teknik Informatika</option>
-                        <option value="BD">Bisnis Digital</option>
+                        <?php 
+                            foreach($list_prodi as $prodi):
+                        ?>
+                        <option value="<?= $prodi->kode?>"><?= $prodi->nama?></option>
+                        <?php endforeach; ?>
                     </select>
                     </div>
                 </div>

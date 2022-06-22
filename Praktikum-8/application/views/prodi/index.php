@@ -45,6 +45,7 @@
 				</div>
 			</div>
 			<div class="card-body">
+			<a class="btn btn-primary" href="<?= base_url() ?>index.php/prodi/create" role="button">Tambah Data</a>
               <table class="table">
 				<thead>
 					<tr>
@@ -52,6 +53,7 @@
 						<th>KODE</th>
 						<th>Nama Prodi</th>
 						<th>Ketua Prodi</th>
+						<th>Tools</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -64,6 +66,11 @@
 						<td><?= $prodi->kode?></td>
 						<td><?= $prodi->nama?></td>
 						<td><?= $prodi->kaprodi?></td>
+						<td>
+						<a class="btn btn-info" href="<?= base_url() ?>index.php/prodi/detail?id=<?= $prodi->kode?>" role="button">Detail</a>
+							<a class="btn btn-warning" href="<?= base_url() ?>index.php/prodi/edit?id=<?= $prodi->kode?>" role="button">Update</a>
+							<a class="btn btn-danger" href="<?= base_url() ?>index.php/prodi/delete?id=<?= $prodi->kode?>" role="button" onclick="if(!confirm('Yakin Hapus Data Prodi Berikut | <?=$prodi->kode?>?')) {return false}">Delete</a>
+						</td>
 					</tr>
 					<?php
 						$nomor++;

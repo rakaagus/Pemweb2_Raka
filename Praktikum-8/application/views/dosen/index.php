@@ -45,7 +45,47 @@
 				</div>
 			</div>
 			<div class="card-body">
-              Data Dosen
+			<a class="btn btn-primary" href="<?= base_url() ?>index.php/dosen/create" role="button">Tambah Data</a>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>NO</th>
+						<th>NIDN</th>
+						<th>Nama Dosen</th>
+						<th>Gender</th>
+						<th>Tempat Lahir</th>
+						<th>Tanggal Lahir</th>
+						<th>Pendidikan</th>
+						<th>Prodi</th>
+						<th>Tools</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+						$nomor = 1;
+						foreach($list_dosen as $dsn):
+					?>
+					<tr>
+						<td><?= $nomor ?></td>
+						<td><?= $dsn->nidn?></td>
+						<td><?= $dsn->nama?></td>
+						<td><?= $dsn->gender?></td>
+						<td><?= $dsn->tmp_lahir?></td>
+						<td><?= $dsn->tgl_lahir?></td>
+						<td><?= $dsn->pendidikan_akhir?></td>
+						<td><?= $dsn->prodi_kode?></td>
+						<td>
+							<a class="btn btn-info" href="<?= base_url() ?>index.php/dosen/detail?id=<?= $dsn->nidn?>" role="button">Detail</a>
+							<a class="btn btn-warning" href="<?= base_url() ?>index.php/dosen/edit?id=<?= $dsn->nidn?>" role="button">Update</a>
+							<a class="btn btn-danger" href="<?= base_url() ?>index.php/dosen/delete?id=<?= $dsn->nidn?>" role="button" onclick="if(!confirm('Yakin Hapus Data Dosen Berikut | <?=$dsn->nama?>?')) {return false}">Delete</a>
+						</td>
+					</tr>
+					<?php
+						$nomor++;
+						endforeach;
+					?>
+				</tbody>
+			  </table>
             </div>
 			<!-- /.card-body -->
 			<div class="card-footer">Footer</div>

@@ -20,8 +20,11 @@ class Mahasiswa extends CI_Controller{
     }
 
     public function create(){
+        $this->load->model("Prodi_model", 'prodi');
+
         $data = array(
             'title' => "Create Mahasiswa",
+            'list_prodi' => $this->prodi->getAll()
         );
         $this->load->view('layout/header', $data);
 		$this->load->view('layout/navbar');
@@ -84,9 +87,13 @@ class Mahasiswa extends CI_Controller{
         $this->load->model("Mahasiswa_model", 'mahasiswa');
         $mhs_edit = $this->mahasiswa->findById($_id);
 
+        //kode unutk loop data prodi
+        $this->load->model("Prodi_model", 'prodi');
+
         $data = array(
             'title' => "Edit Mahasiswa",
-            'mhs_edit' => $mhs_edit
+            'mhs_edit' => $mhs_edit,
+            'list_prodi' => $this->prodi->getAll()
         );
 
         $this->load->view('layout/header', $data);

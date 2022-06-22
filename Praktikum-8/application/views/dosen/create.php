@@ -47,8 +47,8 @@
 			</div>
 			<div class="card-body">
             <?php echo form_open('dosen/save')?>
-                <div class="form-group row">
-                    <label for="nidn" class="col-4 col-form-label">Nidn</label> 
+            <div class="form-group row">
+                    <label for="nidn" class="col-4 col-form-label">nidn</label> 
                     <div class="col-8">
                     <div class="input-group">
                         <div class="input-group-prepend">
@@ -80,15 +80,53 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="pendidikan" class="col-4 col-form-label">Pendidikan</label> 
+                    <label for="tmp_lahir" class="col-4 col-form-label">Tempat Lahir</label> 
                     <div class="col-8">
                     <div class="input-group">
                         <div class="input-group-prepend">
                         <div class="input-group-text">
-                            <i class="fa fa-american-sign-language-interpreting"></i>
+                            <i class="fa fa-location-arrow"></i>
                         </div>
                         </div> 
-                        <input id="pendidikan" name="pendidikan" type="text" class="form-control">
+                        <input id="tmp_lahir" name="tmp_lahir" type="text" class="form-control">
+                    </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="tgl_lahir" class="col-4 col-form-label">Tanggal lahir</label> 
+                    <div class="col-8">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <i class="fa fa-calendar"></i>
+                        </div>
+                        </div> 
+                        <input id="tgl_lahir" name="tgl_lahir" type="date" class="form-control">
+                    </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="prodi" class="col-4 col-form-label">Program Studi</label> 
+                    <div class="col-8">
+                    <select id="prodi" name="prodi" class="custom-select">
+                        <?php 
+                            foreach($list_prodi as $prodi):
+                        ?>
+                        <option value="<?= $prodi->kode?>"><?= $prodi->nama?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="pendidikan_akhir" class="col-4 col-form-label">Pendidikan Akhir</label> 
+                    <div class="col-8">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <i class="fa fa-area-chart"></i>
+                        </div>
+                        </div> 
+                        <input id="pendidikan_akhir" name="pendidikan_akhir" type="text" class="form-control">
                     </div>
                     </div>
                 </div> 

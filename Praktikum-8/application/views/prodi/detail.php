@@ -5,14 +5,13 @@
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1>View Dosen</h1>
+					<h1>View Prodi</h1>
 				</div>
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
 						<li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
-						<li class="breadcrumb-item"><a href="<?= base_url() ?>index.php/dosen">Dosen</a></li>
-						<li class="breadcrumb-item"><a href="<?= base_url() ?>index.php/dosen/create">Create Dosen</a></li>
-						<li class="breadcrumb-item active">View Dosen</li>
+						<li class="breadcrumb-item"><a href="<?= base_url() ?>index.php/prodi">Prodi</a></li>
+						<li class="breadcrumb-item active">Detail Prodi</li>
 					</ol>
 				</div>
 			</div>
@@ -25,7 +24,7 @@
 		<!-- Default box -->
 		<div class="card">
 			<div class="card-header">
-				<h3 class="card-title">Title</h3>
+				<h3 class="card-title">Detail Prodi</h3>
 
 				<div class="card-tools">
 					<button
@@ -47,13 +46,24 @@
 				</div>
 			</div>
 			<div class="card-body">
-                NIDN : <?= $dsn1->nidn ?>
-                <br>
-                Nama Lengkap: <?= $dsn1->nama ?>
-                <br>
-                Jenis Kelamin : <?= $dsn1->gender ?>
-                <br>
-                Pendidikan : <?= $dsn1->pendidikan ?>
+                <div class="row mb-2">
+                    <div class="col-sm-8">
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr>
+                                    <td>Kode</td><td><?= $prodi->kode ?></td>
+                                </tr>
+                                <tr>
+                                    <td>Nama Lengkap</td><td><?= $prodi->nama ?></td>
+                                </tr>
+                                <tr>
+                                    <td>Kaprodi</td><td><?= $prodi->kaprodi ?></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-sm-4">Ini Foto</div>
+                </div>
             </div>
 			<!-- /.card-body -->
 			<div class="card-footer">Footer</div>
